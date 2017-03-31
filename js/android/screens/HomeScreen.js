@@ -1,4 +1,5 @@
 import React from 'react'
+import {View, Button} from 'react-native'
 import Home from '../components/home'
 
 class HomeScreen extends React.PureComponent {
@@ -7,8 +8,15 @@ class HomeScreen extends React.PureComponent {
   }
 
   render() {
+    const { navigate } = this.props.navigation
     return (
-      <Home title="RoamMeet" />
+      <View>
+        <Home title="RoamMeet" />
+        <Button
+          onPress={() => navigate('SignIn')}
+          title="Sign In"
+        />
+      </View>
     )
   }
 }

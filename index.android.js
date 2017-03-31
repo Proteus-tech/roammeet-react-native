@@ -10,10 +10,14 @@ import {
 } from 'react-native';
 import {StackNavigator} from 'react-navigation'
 import HomeScreen from './js/android/screens/HomeScreen'
+import SignInScreen from './js/android/screens/SignInScreen'
 
 const RoamMeet = StackNavigator({
   Home: {
     screen: HomeScreen
+  },
+  SignIn: {
+    screen: SignInScreen
   }
 })
 
