@@ -8,21 +8,15 @@ import React, { Component } from 'react';
 import {Container, Header, Body, Title} from 'native-base'
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
-  View
+  StyleSheet
 } from 'react-native';
+
+import Home from './src/components/android/home'
 
 export default class RoamMeet extends Component {
   render() {
     return (
-      <Container>
-        <Header>
-          <Body>
-            <Title>RoamMeet</Title>
-          </Body>
-        </Header>
-      </Container>
+      <Home title="Roam Meet App" />
     );
   }
 }
