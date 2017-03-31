@@ -1,0 +1,3 @@
+rootProject.name = 'RoamMeet'
+
+include ':app'
