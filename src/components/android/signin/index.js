@@ -13,11 +13,11 @@ const SignIn = (props) => {
       <Thumbnail style={{ alignSelf: 'center', marginTop: 70, marginBottom: 50, width: 150, height: 150 }} source={require('./img/logo.png')} />
       <Content>
         <Form style={{paddingLeft: 20, paddingRight: 20}}>
-          <Item>
+          <Item floatingLabel last>
             <Label>E-mail</Label>
             <Input />
           </Item>
-          <Item>
+          <Item floatingLabel last>
             <Label>Password</Label>
             <Input secureTextEntry />
           </Item>

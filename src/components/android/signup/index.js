@@ -17,11 +17,11 @@ const SignUp = (props) => {
         />
         <Text style={{ alignSelf: 'center'}}>Create an account</Text>
         <Form style={{paddingLeft: 20, paddingRight: 20, marginTop: 25}}>
-          <Item>
+          <Item floatingLabel last>
             <Label>E-mail</Label>
             <Input />
           </Item>
-          <Item>
+          <Item floatingLabel last>
             <Label>Password</Label>
             <Input secureTextEntry />
           </Item>
