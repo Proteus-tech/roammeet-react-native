@@ -13,7 +13,7 @@ const eventList = [
     inviter: 'Somjai',
     date: '10-2-2017',
     description: 'ma ter yhak jer :-)',
-    title: 'Reunion Angle gang xoxo.',
+    title: 'Reunion Angel gang xoxo.',
     pic:'./butter.jpg'
   },
   {

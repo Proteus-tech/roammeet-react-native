@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import {Container, Header, Body, Title, Footer, FooterTab, Button, Content} from 'native-base'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Home from './src/components/ios/home'
+import SignIn from './src/components/ios/SignIn'
 import colors from './src/colors'
 import {
   AppRegistry,
@@ -25,7 +26,7 @@ export default class RoamMeet extends Component {
             <Title>RoamMeet</Title>
           </Body>
         </Header>
-        <Home />
+        <SignIn />
         <Footer >
             <FooterTab>
                 <Button>
