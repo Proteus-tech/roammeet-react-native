@@ -5,20 +5,26 @@
  */
 
 import React, { Component } from 'react';
-import {Content, Card, CardItem, Body, Text} from 'native-base'
+import {Content, Card, CardItem, Body, Text, Thumbnail, Left} from 'native-base'
 
-const EventListItem = () => {
+const EventListItem = ({detail}) => {
+  const {title, description, date, inviter, pic} = detail
   return (
-    <Card>
-      <CardItem>
+    <CardItem>
+      <CardItem Header>
+        <Thumbnail source={require('./butter.jpg')} />
         <Body>
-          <Text>
-              first
-          </Text>
+          <Text>{title}</Text>
+          <Text note>{date}</Text>
         </Body>
       </CardItem>
-    </Card>
+      <CardItem content>
+        <Text>
+          {description}
+        </Text>
+      </CardItem>
+    </CardItem>
   )
 }
 
-export default Home
+export default EventListItem

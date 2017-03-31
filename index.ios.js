@@ -25,7 +25,7 @@ export default class RoamMeet extends Component {
             <Title>RoamMeet</Title>
           </Body>
         </Header>
-      <Home />
+        <Home />
         <Footer >
             <FooterTab>
                 <Button>
