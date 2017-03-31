@@ -26,11 +26,11 @@ const eventList = [
 ]
 const EventList = () => {
   return (
-    <Card>
+    <Content>
       {
         eventList.map((event, index) => <EventListItem detail={event} key={index}/>)
       }
-    </Card>
+    </Content>
   )
 }
 
