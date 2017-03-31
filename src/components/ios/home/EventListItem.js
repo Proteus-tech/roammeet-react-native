@@ -7,19 +7,17 @@
 import React, { Component } from 'react';
 import {Content, Card, CardItem, Body, Text} from 'native-base'
 
-const Home = () => {
+const EventListItem = () => {
   return (
-    <Content>
-      <Card>
-        <CardItem>
-          <Body>
-            <Text>
-                first
-            </Text>
-          </Body>
-        </CardItem>
-      </Card>
-    </Content>
+    <Card>
+      <CardItem>
+        <Body>
+          <Text>
+              first
+          </Text>
+        </Body>
+      </CardItem>
+    </Card>
   )
 }
 

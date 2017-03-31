@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import {Container, Header, Body, Title, Footer, FooterTab, Button, Content} from 'native-base'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Home from './src/components/ios/home'
+import colors from './src/colors'
 import {
   AppRegistry,
   StyleSheet,
@@ -28,19 +29,19 @@ export default class RoamMeet extends Component {
         <Footer >
             <FooterTab>
                 <Button>
-                    <Icon name='home' size={20} color="#6a6a6a"/>
+                    <Icon name='home' size={20} color={colors.lightGrey}/>
                 </Button>
                 <Button>
-                    <Icon name='calendar' size={18} color="#6a6a6a"/>
+                    <Icon name='calendar' size={18} color={colors.lightGrey}/>
                 </Button>
                 <Button active>
-                    <Icon name='plus-square' size={18} color="#6a6a6a"/>
+                    <Icon name='plus-square' size={18} color={colors.lightGrey}/>
                 </Button>
                 <Button>
-                    <Icon name='comments-o' size={18} color="#6a6a6a"/>
+                    <Icon name='comments-o' size={18} color={colors.lightGrey}/>
                 </Button>
                 <Button>
-                    <Icon name='users' size={18} color="#6a6a6a"/>
+                    <Icon name='users' size={18} color={colors.lightGrey}/>
                 </Button>
             </FooterTab>
         </Footer>
