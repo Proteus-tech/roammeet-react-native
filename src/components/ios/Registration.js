@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Content, InputGroup, Input, Text, Button} from 'native-base'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import EventList from './EventList'
 import colors from '../../colors'
 
 const Registration = () => {
