@@ -8,6 +8,7 @@ import React, { Component } from 'react'
 import {TabNavigator} from 'react-navigation'
 import HomeScreen from './src/ios/screens/HomeScreen'
 import SignInScreen from './src/ios/screens/SignInScreen'
+import CreateMeetUpScreen from './src/ios/screens/CreateMeetUpScreen'
 import colors from './src/colors'
 import {
   AppRegistry
@@ -20,6 +21,9 @@ const RoamMeet = TabNavigator({
   SignIn: {
     screen: SignInScreen,
   },
+	CreateMeetUp: {
+		screen: CreateMeetUpScreen
+	}
 }, {
   tabBarOptions: {
     activeTintColor: '#e91e63',
