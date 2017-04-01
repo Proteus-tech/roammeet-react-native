@@ -5,16 +5,6 @@ import HomeContent from './home-content'
 
 const Home = (props) => {
   const {title} = props
-  const invitedList = [
-    {
-      name: 'A',
-      message: 'Hello'
-    },
-    {
-      name: 'B',
-      message: 'Hi!!!'
-    }
-  ]
   const state = {
     active: true
   }
