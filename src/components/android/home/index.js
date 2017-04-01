@@ -1,14 +1,29 @@
 import React from 'react'
-import {Container, Header, Body, Title, Left, Button, Icon, Right, Thumbnail} from 'native-base'
+import {Container, Header, Footer, FooterTab, Content, Body, Title, Left, Button, Right, Thumbnail, List, ListItem, Text, H3, Separator, Grid, Col, Fab} from 'native-base'
+import Icon from 'react-native-vector-icons/FontAwesome';
+import HomeContent from './home-content'
 
 const Home = (props) => {
   const {title} = props
+  const invitedList = [
+    {
+      name: 'A',
+      message: 'Hello'
+    },
+    {
+      name: 'B',
+      message: 'Hi!!!'
+    }
+  ]
+  const state = {
+    active: true
+  }
   return (
     <Container>
       <Header>
         <Left>
           <Button transparent>
-            <Icon name='menu' />
+            <Icon name='bars' size={40} />
           </Button>
         </Left>
         <Body>
@@ -20,6 +35,29 @@ const Home = (props) => {
           </Button>
         </Right>
       </Header>
+      <HomeContent />
+      <Fab
+        active={state.active}
+        direction='right'
+        containerStyle={{marginLeft: 10}}
+        style={{backgroundColor: '#5067FF'}}
+        onPress={() => state.active = !state.active}
+      >
+        <Icon name="plus-square" />
+      </Fab>
+      <Footer>
+        <FooterTab>
+          <Grid>
+            <Col />
+            <Col>
+              <Button transparent>
+                <Icon name='plus-square' style={{color: 'white'}} size={40} />
+              </Button>
+            </Col>
+            <Col />
+          </Grid>
+        </FooterTab>
+      </Footer>
     </Container>
   )
 }
