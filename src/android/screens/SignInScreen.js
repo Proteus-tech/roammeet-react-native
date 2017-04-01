@@ -7,8 +7,11 @@ const SignInScreen = (props) => {
   const navigateToSignUp = () => {
     navigate('SignUp')
   }
+  const navigateToHome = () => {
+    navigate('Home')
+  }
 
-  return <SignIn onSignUp={navigateToSignUp} />
+  return <SignIn onSignUp={navigateToSignUp} onHome={navigateToHome} />
 }
 
 SignInScreen.navigationOptions = {

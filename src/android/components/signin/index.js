@@ -16,7 +16,7 @@ class SignIn extends React.Component {
             <Label>Password</Label>
             <Input secureTextEntry />
           </Item>
-          <Button block rounded info style={{marginTop: 20, marginBottom: 5 }}>
+          <Button onPress={this.props.onHome} block rounded info style={{marginTop: 20, marginBottom: 5 }}>
             <Text>Sign In</Text>
           </Button>
           <Button onPress={this.props.onSignUp} transparent success style={{alignSelf: 'center'}}>
@@ -30,7 +30,8 @@ class SignIn extends React.Component {
 }
 
 SignIn.propTypes = {
-  onSignUp: React.PropTypes.func.isRequired
+  onSignUp: React.PropTypes.func.isRequired,
+  onHome: React.PropTypes.func.isRequired
 }
 
 export default SignIn
