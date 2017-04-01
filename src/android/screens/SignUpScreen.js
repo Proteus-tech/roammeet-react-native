@@ -2,7 +2,7 @@ import React from 'react'
 import SignUp from '../components/signup'
 
 const SignUpScreen = () => (
-  <SignIn title="Sign Up" />
+  <SignUp title="Sign Up" />
 )
 
 SignUpScreen.navigationOptions = {
