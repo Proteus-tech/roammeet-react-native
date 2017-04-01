@@ -1,15 +1,10 @@
 import React from 'react'
-import {Container, Header, Body, Title, Text, Form, Item, Label, Input, Image, Button, Thumbnail, Content } from 'native-base'
+import {Container, Title, Text, Form, Item, Label, Input, Button, Thumbnail, Content } from 'native-base'
 
 const SignIn = (props) => {
   const {title} = props
   return (
     <Container>
-      <Header>
-        <Body>
-          <Title>{title}</Title>
-        </Body>
-      </Header>
       <Thumbnail style={{ alignSelf: 'center', marginTop: 70, marginBottom: 50, width: 150, height: 150 }} source={require('./img/logo.png')} />
       <Content>
         <Form style={{paddingLeft: 20, paddingRight: 20}}>

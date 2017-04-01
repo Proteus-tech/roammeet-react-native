@@ -1,15 +1,10 @@
 import React from 'react'
-import {Container, Header, Body, Title, Text, Form, Item, Label, Input, Image, Button, Thumbnail, Content, Card, CardItem } from 'native-base'
+import {Container, Text, Form, Item, Label, Input, Button, Thumbnail, Content} from 'native-base'
 
 const SignUp = (props) => {
   const {title} = props
   return (
     <Container>
-      <Header>
-        <Body>
-          <Title>{title}</Title>
-        </Body>
-      </Header>
       <Content style={{paddingLeft: 20, paddingRight: 20}}>
         <Thumbnail 
           style={{ alignSelf: 'center', marginTop: 30, marginBottom: 10, width: 100, height: 100 }} 
