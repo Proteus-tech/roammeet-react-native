@@ -1,12 +1,32 @@
 import React from 'react'
+import {View} from 'react-native'
+import {Button, Text} from 'native-base'
 import Home from '../components/home'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-const HomeScreen = () => (
-  <Home title="RoamMeet" />
-)
+class HomeScreen extends React.PureComponent {
+  static navigationOptions = {
+    title: 'RoamMeet',
+    header: (navigation) => ({
+      left: (
+        <Button transparent>
+          <Icon name='bars' size={20} />
+        </Button>
+      ),
+      right: (
+        <Button onPress={() => navigation.navigate('SignIn')}>
+          <Text>Sign out</Text>
+        </Button>
+      )
+    })
+  }
 
-HomeScreen.navigationOptions = {
-  title: 'HomeScreen'
+  render() {
+    const {navigate} = this.props.navigation
+    return (
+      <Home title="RoamMeet" />
+    )
+  }
 }
 
 export default HomeScreen
