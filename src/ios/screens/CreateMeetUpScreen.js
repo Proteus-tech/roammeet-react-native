@@ -1,7 +1,6 @@
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import Home from '../components/Home'
-import {Container, Header, Body, Title} from 'native-base'
+import CreateMeetUp from '../components/CreateMeetUp'
 
 class CreateMeetUpScreen extends React.PureComponent {
   static navigationOptions = {
@@ -17,14 +16,7 @@ class CreateMeetUpScreen extends React.PureComponent {
   render() {
     const { navigate } = this.props.navigation
     return (
-      <Container>
-				<Header>
-          <Body>
-              <Title>Create MeetUp</Title>
-          </Body>
-        </Header>
-        <Home />
-      </Container>
+      <CreateMeetUp />
     )
   }
 }
