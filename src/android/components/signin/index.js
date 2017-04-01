@@ -1,41 +1,37 @@
 import React from 'react'
-import {Container, Header, Body, Title, Text, Form, Item, Label, Input, Image, Button, Thumbnail, Content } from 'native-base'
+import {Container, Title, Text, Form, Item, Label, Input, Button, Thumbnail, Content } from 'native-base'
 
-const SignIn = (props) => {
-  const {title} = props
-  return (
-    <Container>
-      <Header>
-        <Body>
-          <Title>{title}</Title>
-        </Body>
-      </Header>
-      <Thumbnail style={{ alignSelf: 'center', marginTop: 50, marginBottom: 30 }} source={require('./logo.png')} />
+class SignIn extends React.Component {
+   render() {
+    return (
+      <Container>
+      <Thumbnail style={{ alignSelf: 'center', marginTop: 70, marginBottom: 50, width: 150, height: 150 }} source={require('./img/logo.png')} />
       <Content>
-        <Form style={{paddingLeft: 10, paddingRight: 10}}>
-          <Item>
+        <Form style={{paddingLeft: 20, paddingRight: 20}}>
+          <Item floatingLabel last>
             <Label>E-mail</Label>
             <Input />
           </Item>
-          <Item>
+          <Item floatingLabel last>
             <Label>Password</Label>
-            <Input />
+            <Input secureTextEntry />
           </Item>
-          <Button block rounded info style={{marginTop: 20, marginBottom: 5 }}>
+          <Button onPress={this.props.onHome} block rounded info style={{marginTop: 20, marginBottom: 5 }}>
             <Text>Sign In</Text>
           </Button>
-          <Button transparent success style={{alignSelf: 'center'}}>
-            <Text>Register</Text>
+          <Button onPress={this.props.onSignUp} transparent success style={{alignSelf: 'center'}}>
+            <Text>Create a new account</Text>
           </Button>
         </Form>
       </Content>
     </Container>
-  )
+    )
+  }
 }
 
 SignIn.propTypes = {
-  title: React.PropTypes.string.isRequired
+  onSignUp: React.PropTypes.func.isRequired,
+  onHome: React.PropTypes.func.isRequired
 }
-
 
 export default SignIn

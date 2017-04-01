@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Content, InputGroup, Input, Text, Button} from 'native-base'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import colors from '../colors'
+import colors from '../../colors'
 
 const SignIn = () => {
   return (
