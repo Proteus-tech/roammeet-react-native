@@ -1,7 +1,7 @@
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Home from '../components/Home'
-import {Container} from 'native-base'
+import {Container, Header, Body, Title} from 'native-base'
 
 class HomeScreen extends React.PureComponent {
   static navigationOptions = {
@@ -17,6 +17,11 @@ class HomeScreen extends React.PureComponent {
     const { navigate } = this.props.navigation
     return (
       <Container>
+				<Header>
+          <Body>
+              <Title>Home</Title>
+          </Body>
+        </Header>
         <Home />
       </Container>
     )

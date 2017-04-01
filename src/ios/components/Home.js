@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {Content, Card, CardItem, Body, Text} from 'native-base'
 import EventList from './EventList'
 

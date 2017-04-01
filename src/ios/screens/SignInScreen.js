@@ -1,6 +1,6 @@
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import {Container} from 'native-base'
+import {Container, Header, Body, Title} from 'native-base'
 import SignIn from '../components/SignIn'
 
 class SignInScreen extends React.PureComponent {
@@ -17,6 +17,11 @@ class SignInScreen extends React.PureComponent {
     const { navigate } = this.props.navigation
     return (
       <Container>
+				<Header>
+          <Body>
+              <Title>Sign In</Title>
+          </Body>
+        </Header>
         <SignIn />
       </Container>
     )
