@@ -14,7 +14,7 @@ const Home = (props) => {
           <Grid>
             <Col />
             <Col>
-              <Button transparent>
+              <Button transparent onPress={props.onCreate}>
                 <Icon name='plus-square' style={{color: 'white'}} size={40} />
               </Button>
             </Col>

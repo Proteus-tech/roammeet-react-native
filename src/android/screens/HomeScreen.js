@@ -24,7 +24,7 @@ class HomeScreen extends React.PureComponent {
   render() {
     const {navigate} = this.props.navigation
     return (
-      <Home title="RoamMeet" />
+      <Home title="RoamMeet" onCreate={() => navigate('CreateEvent')}/>
     )
   }
 }
