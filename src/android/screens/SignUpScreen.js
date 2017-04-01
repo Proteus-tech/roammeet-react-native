@@ -1,9 +1,14 @@
 import React from 'react'
 import SignUp from '../components/signup'
 
-const SignUpScreen = () => (
-  <SignUp title="Sign Up" />
-)
+const SignUpScreen = (props) => {
+  const {navigate} = props.navigation
+  const navigateToSignIn = () => {
+    navigate('SignIn')
+  }
+
+  return <SignUp onSignIn={navigateToSignIn} />
+}
 
 SignUpScreen.navigationOptions = {
   title: 'Sign Up'

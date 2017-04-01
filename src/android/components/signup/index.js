@@ -1,8 +1,8 @@
 import React from 'react'
 import {Container, Text, Form, Item, Label, Input, Button, Thumbnail, Content} from 'native-base'
 
-const SignUp = (props) => {
-  const {title} = props
+class SignUp extends React.Component {
+  render() {
   return (
     <Container>
       <Content style={{paddingLeft: 20, paddingRight: 20}}>
@@ -24,20 +24,20 @@ const SignUp = (props) => {
             <Label>Confirm password</Label>
             <Input secureTextEntry />
           </Item>
-          <Button block rounded info style={{marginTop: 20, marginBottom: 5 }}>
+          <Button  onPress={this.props.onSignIn} block rounded info style={{marginTop: 20, marginBottom: 5 }}>
             <Text>Sign up</Text>
           </Button>
-          <Button transparent success style={{alignSelf: 'center'}}>
+          <Button onPress={this.props.onSignIn} transparent success style={{alignSelf: 'center'}}>
             <Text>Have an account? Sign in</Text>
           </Button>
         </Form>
       </Content>
     </Container>
-  )
+  )}
 }
 
 SignUp.propTypes = {
-  title: React.PropTypes.string.isRequired
+  onSignIn: React.PropTypes.func.isRequired
 }
 
 
