@@ -18,6 +18,9 @@ import SignUpScreen from './src/android/screens/SignUpScreen'
 import CreateEventScreen from './src/android/screens/CreateEventScreen'
 
 const RoamMeet = StackNavigator({
+  CreateEvent: {
+    screen: CreateEventScreen
+  },
   Home: {
     screen: HomeScreen
   },
@@ -26,9 +29,6 @@ const RoamMeet = StackNavigator({
   },
   SignUp: {
     screen: SignUpScreen
-  },
-  CreateEvent: {
-    screen: CreateEventScreen
   }
 })
 
