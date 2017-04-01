@@ -7,7 +7,7 @@
 import React, { Component } from 'react';
 import {Content, Card, CardItem, Body, Text, Thumbnail, Left} from 'native-base'
 import {ItalicText} from './common'
-import colors from '../../colors'
+import colors from '../colors'
 
 const EventListItem = ({detail}) => {
   const {title, description, date, inviter, pic} = detail
