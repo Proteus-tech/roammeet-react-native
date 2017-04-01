@@ -11,33 +11,17 @@ import {
   StyleSheet
 } from 'react-native';
 
-import Home from './src/components/android/home'
+import {StackNavigator} from 'react-navigation'
+import HomeScreen from './src/android/screens/HomeScreen'
+import SignInScreen from './src/android/screens/SignInScreen'
 
-export default class RoamMeet extends Component {
-  render() {
-    return (
-      <Home title="Roam Meet App" />
-    );
+const RoamMeet = StackNavigator({
+  Home: {
+    screen: HomeScreen
+  },
+  SignIn: {
+    screen: SignInScreen
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: 'red',
-    marginBottom: 5,
-  },
-});
+})
 
 AppRegistry.registerComponent('RoamMeet', () => RoamMeet);
