@@ -15,7 +15,7 @@ class HomeScreen extends React.PureComponent {
       ),
       right: (
         <Button onPress={() => navigation.navigate('SignIn')}>
-          <Text>Sign out</Text>
+          <Text>Sign Up</Text>
         </Button>
       )
     })
