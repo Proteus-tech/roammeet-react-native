@@ -4,8 +4,7 @@ const PEOPLE_BASE_API = 'http://localhost:8008/'
 export async function listMeetup() {
   try {
     let response = await fetch(`${MEETUP_BASE_API}meetups/`)
-    let responseJson = await response.json()
-    return responseJson
+    return await response.json()
   } catch(error) {
     console.error(error)
   }
