@@ -1,9 +1,9 @@
-const MEETUP_BASE_API = 'http://localhost:8009/'
+const MEETUP_BASE_API = 'http://localhost:8009'
 const PEOPLE_BASE_API = 'http://localhost:8008/'
 
 export async function listMeetup() {
   try {
-    let response = await fetch(`${MEETUP_BASE_API}meetups/`)
+    let response = await fetch(`${MEETUP_BASE_API}/meetups/`)
     return await response.json()
   } catch(error) {
     console.error(error)
@@ -22,6 +22,14 @@ export const meetupDetail = (id) => {
   })
 }
 
-export const createMeetUp = (meetup) => {
-  return new Promise((resolve) => resolve(meetup))
+async function createMeetUp(meetup) {
+  try {
+    let response = await fetch(`${MEETUP_BASE_API}/meetups/`, {
+      method: 'PUT',
+      body: JSON.stringify(meetup)
+    })
+    return await response.json()
+  } catch(error) {
+    console.error(error)
+  }
 }

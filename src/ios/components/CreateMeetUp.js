@@ -31,8 +31,7 @@ class CreateMeetUp extends React.Component {
 		createMeetUp({
 			title: this.state.title,
 			description: this.state.description,
-			date: this.state.date,
-			inviter: 'Tle'
+			start_date: this.state.date
 		}).then(success => console.log('Saved', success))
 	}
 
