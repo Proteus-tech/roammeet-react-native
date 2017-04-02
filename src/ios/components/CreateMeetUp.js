@@ -7,6 +7,7 @@ import {DatePickerIOS} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import colors from '../../colors'
 import {createMeetUp} from '../../meetup'
+import moment from 'moment'
 
 class CreateMeetUp extends React.Component {
 	static defaultProps = {
@@ -29,10 +30,11 @@ class CreateMeetUp extends React.Component {
 
 	onCreateMeetUp = (e) => {
 		createMeetUp({
-			title: this.state.title,
+			name: this.state.title,
 			description: this.state.description,
-			start_date: this.state.date
-		}).then(success => console.log('Saved', success))
+			start_date: moment(this.state.date).format('YYYY-MM-DD'),
+			start_time: moment(this.state.date).format('HH:mm')
+		}).then(success => console.log('Saved'))
 	}
 
 	componentDidMount () {

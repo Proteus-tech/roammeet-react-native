@@ -22,7 +22,7 @@ export const meetupDetail = (id) => {
   })
 }
 
-async function createMeetUp(meetup) {
+export async function createMeetUp(meetup) {
   try {
     let response = await fetch(`${MEETUP_BASE_API}/meetups/`, {
       method: 'PUT',
