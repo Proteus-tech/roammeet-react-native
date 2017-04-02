@@ -2,6 +2,7 @@ import React from 'react'
 import {Container, Content, List, ListItem, Text, Body, Thumbnail, Right, H3, Separator} from 'native-base'
 
 const HomeContent = (props) => {
+  console.log(props)
   const invitedList = [
     {
       name: 'A',
@@ -34,7 +35,7 @@ const HomeContent = (props) => {
         </ListItem>
         <List dataArray={invitedList}
             renderRow={(invited) => 
-                <ListItem>
+                <ListItem onPress={props.onDetail}>
                   <Thumbnail source={require('./img/assassinscreedlogo.png')} />
                   <Body>
                     <Text>{invited.name}</Text>
@@ -50,7 +51,7 @@ const HomeContent = (props) => {
         </ListItem>
         <List dataArray={createdList}
             renderRow={(created) => 
-                <ListItem>
+                <ListItem onPress={props.onDetail}>
                   <Body>
                     <Text>{created.name}</Text>
                     <Text>{created.desc}</Text>
@@ -62,6 +63,10 @@ const HomeContent = (props) => {
       </Content>
     </Container>
   )
+}
+
+HomeContent.propTypes = {
+  onDetail: React.PropTypes.func.isRequired
 }
 
 export default HomeContent

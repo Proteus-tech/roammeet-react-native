@@ -15,7 +15,7 @@ class HomeScreen extends React.PureComponent {
       ),
       right: (
         <Button onPress={() => navigation.navigate('SignIn')}>
-          <Text>Sign Up</Text>
+          <Text>Sign In</Text>
         </Button>
       )
     })
@@ -24,7 +24,10 @@ class HomeScreen extends React.PureComponent {
   render() {
     const {navigate} = this.props.navigation
     return (
-      <Home title="RoamMeet" onCreate={() => navigate('CreateEvent')}/>
+      <Home title="RoamMeet" 
+        onCreate={() => navigate('CreateEvent')}
+        onEventDetail={() => navigate('EventDetail')}
+      />
     )
   }
 }
