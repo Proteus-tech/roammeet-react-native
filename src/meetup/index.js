@@ -1,4 +1,5 @@
-// @flow
+const MEETUP_BASE_API = 'http://localhost:8008/'
+const PEOPLE_BASE_API = 'http://localhost:8008/'
 
 export const listMeetup = () => {
   return new Promise((resolve) => {
