@@ -2,6 +2,19 @@ import React from 'react'
 import {Container, Title, Text, Form, Item, Label, Input, Button, Thumbnail, Content } from 'native-base'
 
 class SignIn extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+          email: '',
+          password: ''
+        }
+    }
+
+    createAccount () {
+        signup(this.state.email, this.state.password, () => {
+            console.log(' ======== success ======== ')
+        })
+    }
    render() {
     return (
       <Container>
