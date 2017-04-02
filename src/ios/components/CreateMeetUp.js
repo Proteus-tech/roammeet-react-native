@@ -34,7 +34,7 @@ class CreateMeetUp extends React.Component {
 			description: this.state.description,
 			start_date: moment(this.state.date).format('YYYY-MM-DD'),
 			start_time: moment(this.state.date).format('HH:mm')
-		}).then(success => console.log('Saved'))
+		}).then(success => this.props.navigation.navigate('Home'))
 	}
 
 	componentDidMount () {
