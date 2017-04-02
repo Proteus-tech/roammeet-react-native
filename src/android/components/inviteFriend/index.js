@@ -90,11 +90,6 @@ export default class InviteFriend extends Component {
 
         return (
             <Container>
-                <Header>
-                    <Body>
-                    <Title>Invite Friends</Title>
-                    </Body>
-                </Header>
                 <Content searchBar rounded>
                     <Card>
                     <View style={styles.base}>
