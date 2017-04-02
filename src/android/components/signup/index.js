@@ -8,7 +8,7 @@ class SignUp extends React.Component {
       <Content style={{paddingLeft: 20, paddingRight: 20}}>
         <Thumbnail 
           style={{ alignSelf: 'center', marginTop: 30, marginBottom: 10, width: 100, height: 100 }} 
-          source={require('./img/logo.png')} 
+          source={require('../image/logo.png')} 
         />
         <Text style={{ alignSelf: 'center'}}>Create an account</Text>
         <Form style={{paddingLeft: 20, paddingRight: 20, marginTop: 20}}>

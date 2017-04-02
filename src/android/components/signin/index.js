@@ -5,7 +5,7 @@ class SignIn extends React.Component {
    render() {
     return (
       <Container>
-      <Thumbnail style={{ alignSelf: 'center', marginTop: 70, marginBottom: 50, width: 150, height: 150 }} source={require('./img/logo.png')} />
+      <Thumbnail style={{ alignSelf: 'center', marginTop: 70, marginBottom: 50, width: 150, height: 150 }} source={require('../image/logo.png')} />
       <Content>
         <Form style={{paddingLeft: 20, paddingRight: 20}}>
           <Item floatingLabel last>
