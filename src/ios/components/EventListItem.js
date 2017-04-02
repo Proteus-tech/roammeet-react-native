@@ -4,14 +4,18 @@ import {ItalicText} from './common'
 import colors from '../../colors'
 
 const EventListItem = ({detail}) => {
-  const {name, description, start_date, inviter, pic} = detail
+  const {name, description, start_date, inviter, pic, start_time} = detail
   return (
     <Content style={{ marginLeft:10, marginRight:10}}>
       <Card>
-        <CardItem Header>
-          <Thumbnail source={require('./butter.jpg')} />
-          <Text>{name}</Text>
-          <Text note> - {inviter}</Text>
+        <CardItem>
+          <Left>
+            <Thumbnail source={require('./butter.jpg')} />
+            <Body>
+              <Text>{name}</Text>
+              <Text note>{start_date} {start_time}</Text>
+            </Body>
+          </Left>
         </CardItem>
         <CardItem>
           <Body>
