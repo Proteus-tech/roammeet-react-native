@@ -1,3 +1,5 @@
+// @flow
+
 export const listMeetup = () => {
   return new Promise((resolve) => {
     resolve([

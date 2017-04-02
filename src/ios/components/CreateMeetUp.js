@@ -6,14 +6,19 @@ import {
 import {DatePickerIOS} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import colors from '../../colors'
+import {createMeetUp} from '../../meetup'
 
 class CreateMeetUp extends React.Component {
 	static defaultProps = {
+		title: '',
+		description: '',
     date: new Date(),
     timeZoneOffsetInHours: (-1) * (new Date()).getTimezoneOffset() / 60,
   }
 
   state = {
+		title: this.props.title,
+		description: this.props.description,
     date: this.props.date,
     timeZoneOffsetInHours: this.props.timeZoneOffsetInHours,
   }
@@ -21,6 +26,19 @@ class CreateMeetUp extends React.Component {
   onDateChange = (date) => {
     this.setState({date: date})
   }
+
+	onCreateMeetUp = (e) => {
+		createMeetUp({
+			title: this.state.title,
+			description: this.state.description,
+			date: this.state.date,
+			inviter: 'Tle'
+		}).then(success => console.log('Saved', success))
+	}
+
+	componentDidMount () {
+		console.log('CreateMeetUp did mount')
+	}
 
 	render() {
 		return (
@@ -34,11 +52,13 @@ class CreateMeetUp extends React.Component {
 					<Form>
 	            <Item floatingLabel>
 	                <Label>MeetUp name</Label>
-	                <Input />
+	                <Input onChangeText={(title) => this.setState({title})}/>
 	            </Item>
 	            <Item floatingLabel>
 	                <Label>Description</Label>
-	                <Input multiline={true}/>
+	                <Input
+										multiline={true}
+										onChangeText={(description) => this.setState({description})}/>
 	            </Item>
 	        </Form>
 					<Content style={{marginTop: 30}}>
@@ -51,8 +71,8 @@ class CreateMeetUp extends React.Component {
 							minuteInterval={30}
 						/>
 					</Content>
-		      <Button block style={{margin: 10, marginTop: 50}}>
-		        <Text> Create MeetUp </Text>
+		      <Button block style={{margin: 10, marginTop: 50}} onPress={this.onCreateMeetUp}>
+		        <Text>Create MeetUp</Text>
 		      </Button>
 		    </Content>
 			</Container>
