@@ -16,7 +16,7 @@ class CreateMeetUpScreen extends React.PureComponent {
   render() {
     const { navigate } = this.props.navigation
     return (
-      <CreateMeetUp />
+      <CreateMeetUp {...this.props}/>
     )
   }
 }

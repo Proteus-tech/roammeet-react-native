@@ -1,72 +1,48 @@
 import React from 'react'
 import {Container, Content, List, ListItem, Text, Body, Thumbnail, Right, H3, Separator} from 'native-base'
+import {listMeetup} from '../../../meetup'
 
-const HomeContent = (props) => {
-  console.log(props)
-  const invitedList = [
-    {
-      name: 'A',
-      message: 'Hello'
-    },
-    {
-      name: 'B',
-      message: 'Hi!!!'
+class HomeContent extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      eventList: []
     }
-  ]
-  const createdList = [
-    {
-      name: 'Dinner',
-      desc: 'Siam',
-      time: '19.00'
-    },
-    {
-      name: 'Football',
-      desc: 'Jpress',
-      time: '20.00'
-    }
-  ]
-  return (
-    <Container>
-      <Content>
-        <ListItem>
-          <Separator bordered>
-            <H3>Invited List</H3>
-          </Separator>
-        </ListItem>
-        <List dataArray={invitedList}
-            renderRow={(invited) => 
-                <ListItem onPress={props.onDetail}>
-                  <Thumbnail source={require('./img/assassinscreedlogo.png')} />
-                  <Body>
-                    <Text>{invited.name}</Text>
-                    <Text>{invited.message}</Text>
-                  </Body>
-                </ListItem>
-            }
-        />
-        <ListItem>
-          <Separator bordered>
-            <H3>Created List</H3>
-          </Separator>
-        </ListItem>
-        <List dataArray={createdList}
-            renderRow={(created) => 
-                <ListItem onPress={props.onDetail}>
-                  <Body>
-                    <Text>{created.name}</Text>
-                    <Text>{created.desc}</Text>
-                    <Text>{created.time}</Text>
-                  </Body>
-                </ListItem>
-            }
-        />
-      </Content>
-    </Container>
-  )
-}
+  }
 
-HomeContent.propTypes = {
-  onDetail: React.PropTypes.func.isRequired
+  componentDidMount () {
+    listMeetup()
+      .then ((eventList) => {
+        console.log(eventList)
+        this.setState({eventList})
+      })
+  }
+
+  render () {
+    return (
+      <Container>
+        <Content>
+          <ListItem>
+            <Separator bordered>
+              <H3>Meetup list</H3>
+            </Separator>
+          </ListItem>
+          <List dataArray={this.state.eventList}
+              renderRow={(invited) => 
+                  <ListItem onPress={this.props.onDetail}>
+                    <Thumbnail source={require('./img/assassinscreedlogo.png')} />
+                    <Body>
+                      <Text>{invited.name}</Text>
+                      <Text>{invited.description}</Text>
+                      <Text>{invited.start_date} {invited.start_time}</Text>
+                    </Body>
+                  </ListItem>
+              }
+          />
+        </Content>
+      </Container>
+    )
+  }
 }
 
 export default HomeContent

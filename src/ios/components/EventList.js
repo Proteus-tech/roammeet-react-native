@@ -12,6 +12,7 @@ class EventList extends React.Component {
   }
 
   componentDidMount () {
+    console.log('componentDidMount')
     listMeetup()
       .then ((eventList) => {
         this.setState({eventList})
