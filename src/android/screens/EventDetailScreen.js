@@ -4,8 +4,11 @@ import EventDetail from '../components/eventDetail'
 
 const EventDetailScreen = (props) => {
   const {navigate} = props.navigation
-
-  return <EventDetail />
+  
+  const navigateToHome = () => {
+    navigate('Home')
+  }
+  return <EventDetail onHome={navigateToHome} />
 }
 
 EventDetailScreen.navigationOptions = {

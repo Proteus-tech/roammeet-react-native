@@ -28,10 +28,10 @@ class CreateEvent extends React.Component {
             <Label>Appointed time</Label>
             <Text style={{paddingLeft: 10, paddingRight: 10}}>2017-04-02 09.00</Text>
           </Content>
-          <Button block rounded success style={{ marginTop: 20, marginBottom: 5 }}>
+          <Button onPress={this.props.onHome} block rounded success style={{ marginTop: 20, marginBottom: 5 }}>
             <Text>Accept</Text>
           </Button>
-          <Button block rounded danger style={{ marginTop: 20, marginBottom: 5 }}>
+          <Button onPress={this.props.onHome} block rounded danger style={{ marginTop: 20, marginBottom: 5 }}>
             <Text>Reject</Text>
           </Button>
         </Content>
@@ -42,6 +42,7 @@ class CreateEvent extends React.Component {
 }
 
 CreateEvent.propTypes = {
+  onHome: React.PropTypes.func.isRequired
 }
 
 

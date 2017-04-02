@@ -49,7 +49,7 @@ class CreateEvent extends React.Component {
               onDateChange={(datetime) => {this.setState({datetime1: datetime});}}
             />
           </Item>
-          <Button block rounded info style={{marginTop: 20, marginBottom: 5 }}>
+          <Button onPress={this.props.onInviteFriend} block rounded info style={{marginTop: 20, marginBottom: 5 }}>
             <Text>Create</Text>
           </Button>
         </Form>
@@ -60,6 +60,7 @@ class CreateEvent extends React.Component {
 }
 
 CreateEvent.propTypes = {
+  onInviteFriend: React.PropTypes.func.isRequired
 }
 
 

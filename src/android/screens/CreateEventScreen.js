@@ -4,8 +4,10 @@ import CreateEvent from '../components/createEvent'
 
 const CreateEventScreen = (props) => {
   const {navigate} = props.navigation
-
-  return <CreateEvent />
+  const navigateToInviteFriend = () => {
+    navigate('InviteFriend')
+  }
+  return <CreateEvent onInviteFriend={navigateToInviteFriend} />
 }
 
 CreateEventScreen.navigationOptions = {
