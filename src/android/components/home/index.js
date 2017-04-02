@@ -4,11 +4,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import HomeContent from './home-content'
 
 const Home = (props) => {
+  console.log(props)
   const {title, goTo} = props
 
   return (
     <Container>
-      <HomeContent />
+      <HomeContent onDetail={props.onEventDetail} />
       <Footer>
         <FooterTab>
           <Grid>
@@ -27,7 +28,8 @@ const Home = (props) => {
 }
 
 Home.propTypes = {
-  title: React.PropTypes.string.isRequired
+  title: React.PropTypes.string.isRequired,
+  onEventDetail: React.PropTypes.func.isRequired
 }
 
 export default Home
