@@ -18,3 +18,19 @@ export const listMeetup = () => {
     ])
   })
 }
+
+export const meetupDetail = (id) => {
+  return new Promise((resolve) => {
+    return resolve({
+      inviter: 'Somjai',
+      date: '10-2-2017',
+      description: 'ma ter yhak jer :-)',
+      title: 'Reunion Angel gang xoxo.',
+      pic:'./butter.jpg'
+    })
+  })
+}
+
+export const createMeetUp = (meetup) => {
+  return new Promise((resolve) => resolve(meetup))
+}
