@@ -3,7 +3,7 @@ import {Container, Text, Form, Item, Label, Input, Button, Thumbnail, Content} f
 import { signup } from '../../../auth'
 
 class SignUp extends React.Component {
-    
+
     constructor(props) {
         super(props)
         this.state = {
@@ -35,7 +35,7 @@ class SignUp extends React.Component {
                         </Item>
                         <Item floatingLabel last>
                             <Label>Confirm password</Label>
-                            <Input secureTextEntry onChangeText={(password) => this.setState({password})} value={this.state.password}/>
+                            <Input secureTextEntry onChangeText={(password) => this.setState({password})} value={this.state.password} />
                         </Item>
                         <Button  onPress={ () => this.createAccount() } block rounded info style={{marginTop: 20, marginBottom: 5 }}>
                             <Text>Sign up</Text>

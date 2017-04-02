@@ -1,5 +1,6 @@
 import React from 'react'
 import {Container, Title, Text, Form, Item, Label, Input, Button, Thumbnail, Content } from 'native-base'
+import { signin } from '../../../auth'
 
 class SignIn extends React.Component {
     constructor(props) {
@@ -10,36 +11,37 @@ class SignIn extends React.Component {
         }
     }
 
-    createAccount () {
-        signup(this.state.email, this.state.password, () => {
+    login () {
+        signin(this.state.email, this.state.password, () => {
             console.log(' ======== success ======== ')
         })
     }
-   render() {
-    return (
-      <Container>
-      <Thumbnail style={{ alignSelf: 'center', marginTop: 70, marginBottom: 50, width: 150, height: 150 }} source={require('../image/logo.png')} />
-      <Content>
-        <Form style={{paddingLeft: 20, paddingRight: 20}}>
-          <Item floatingLabel last>
-            <Label>E-mail</Label>
-            <Input />
-          </Item>
-          <Item floatingLabel last>
-            <Label>Password</Label>
-            <Input secureTextEntry />
-          </Item>
-          <Button onPress={this.props.onHome} block rounded info style={{marginTop: 20, marginBottom: 5 }}>
-            <Text>Sign In</Text>
-          </Button>
-          <Button onPress={this.props.onSignUp} transparent success style={{alignSelf: 'center'}}>
-            <Text>Create a new account</Text>
-          </Button>
-        </Form>
-      </Content>
-    </Container>
-    )
-  }
+
+    render() {
+        return (
+            <Container>
+                <Thumbnail style={{ alignSelf: 'center', marginTop: 70, marginBottom: 50, width: 150, height: 150 }} source={require('../image/logo.png')} />
+                <Content>
+                    <Form style={{paddingLeft: 20, paddingRight: 20}}>
+                        <Item floatingLabel last>
+                            <Label>E-mail</Label>
+                            <Input onChangeText={(email) => this.setState({email})} value={this.state.email}/>
+                        </Item>
+                        <Item floatingLabel last>
+                            <Label>Password</Label>
+                            <Input secureTextEntry onChangeText={(password) => this.setState({password})} value={this.state.password} />
+                        </Item>
+                        <Button onPress={ () => this.login() } block rounded info style={{marginTop: 20, marginBottom: 5 }}>
+                            <Text>Sign In</Text>
+                        </Button>
+                        <Button onPress={this.props.onSignUp} transparent success style={{alignSelf: 'center'}}>
+                            <Text>Create a new account</Text>
+                        </Button>
+                    </Form>
+                </Content>
+            </Container>
+        )
+    }
 }
 
 SignIn.propTypes = {
