@@ -1,25 +1,14 @@
-const MEETUP_BASE_API = 'http://localhost:8008/'
+const MEETUP_BASE_API = 'http://localhost:8009/'
 const PEOPLE_BASE_API = 'http://localhost:8008/'
 
-export const listMeetup = () => {
-  return new Promise((resolve) => {
-    resolve([
-      {
-        inviter: 'Somjai',
-        date: '10-2-2017',
-        description: 'ma ter yhak jer :-)',
-        title: 'Reunion Angel gang xoxo.',
-        pic:'./butter.jpg'
-      },
-      {
-        inviter: 'SomChai',
-        date: '10-2-2017',
-        description: 'kidtueng jung ma ha nhoi <3',
-        title: 'Tee derm',
-        pic:'./butter.jpg'
-      }
-    ])
-  })
+export async function listMeetup() {
+  try {
+    let response = await fetch(`${MEETUP_BASE_API}meetups/`)
+    let responseJson = await response.json()
+    return responseJson
+  } catch(error) {
+    console.error(error)
+  }
 }
 
 export const meetupDetail = (id) => {
